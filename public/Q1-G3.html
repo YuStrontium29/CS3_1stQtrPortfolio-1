@@ -1,7 +1,7 @@
 <h1> Q1 3rd Graded Exercise submitted by Amber Buico of Strontium</h1>
 
 <input id="meal price" type="number" placeholder="meal price"> <br>
-<input id="tip" type="number" placeholder="tip (%)"> <br>
+<input id="tip" type="number" placeholder="tip "> <br>
 <input id="service_charge" type="number" placeholder="service charge (%)"> <br>
 
 <button onclick="calculateTotal()">Calculate Total</button>
@@ -11,10 +11,10 @@
 <script>
     function calculateTotal() {
         mealPrice = Number(mealprice.value);
-        myTip = Number(document.getElementById("tip").value);
+        myTip = Number(tip.value);
         serviceCharge = Number(service_charge.value);
         
-        total = (mealPrice + myTip) + mealPrice + serviceCharge / 100;
+        total = (mealPrice + myTip ) + (mealPrice * serviceCharge / 100);
 
         totalOutput.innerHTML = "Total Amount: Php" + total.toPrecision(6);
         alert("Total Amount: Php" + total.toFixed(2));
