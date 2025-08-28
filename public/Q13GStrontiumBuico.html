@@ -1,23 +1,38 @@
-<h1> Q1 3rd Graded Exercise submitted by Amber Buico of Strontium</h1>
+<!DOCTYPE>
+<html>
+<body>
 
-<input id="meal price" type="number" placeholder="meal price"> <br>
-<input id="tip" type="number" placeholder="tip "> <br>
-<input id="service_charge" type="number" placeholder="service charge (%)"> <br>
+    <h2> Q1 3rd Graded Exercises submitted by Amber Daphne A. Buico of Strontium</h2>
 
-<button onclick="calculateTotal()">Calculate Total</button>
+    <p> Guess the number: **** </p>
+    <p>The number is from 1 to 100</p>
 
-<div id="totalOutput"></div>
+    Enter your guess: <input id="userGuess" type="text"><br>
 
-<script>
-    function calculateTotal() {
-        mealPrice = Number(mealprice.value);
-        myTip = Number(tip.value);
-        serviceCharge = Number(service_charge.value);
-        
-        total = (mealPrice + myTip ) + (mealPrice * serviceCharge / 100);
+    <button onclick="checkIt()">Check it</button>
 
-        totalOutput.innerHTML = "Total Amount: Php" + total.toPrecision(6);
-        alert("Total Amount: Php" + total.toFixed(2));
-        console.log("Total Amount: Php" + total.toExponential());
-    }
-</script>
+    <p id="result">Result: </p>
+
+    <script>
+
+        var dNumber = Math.floor(Math.random() * 100) + 1;
+
+            function checkIt() {
+                let guess = parseInt(document.getElementById("userGuess").value);
+
+                if (guess < dNumber) {
+                    document.getElementById("result").innerHTML = "Result: Higher";
+                } else if (guess > dNumber) {
+                    document.getElementbyId("result").innerHTML = "Result: Lower";
+                } else if (guess === dNumber) {
+                    document.getElementbyId("result").innerHTML = "Result: You got it :D";
+                } else {
+                    document.getElementById("result").innerHTML = "Result: Try again :(";
+                }   
+            }
+
+    </script>
+
+
+</body>
+</html>
