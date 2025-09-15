@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pimp My Button</title>
+    <link rel="stylesheet" href="style_button.css">
+</head>
+<body>
+    <h2>Amber Daphne A. Buico  -  9-Strontium  -  September, 2025</h2>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Game</title>
+    <link rel="stylesheet" href="bg.css">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Personal Homepage</title>
+  <link rel="stylesheet" href="style_homepage.css">
+</head>
+
+<h1>Guess My Word !</h1>
+<p id="wordDisplay"></p>
+<input type="text" id="guessInput" maxlength="1">
+<button onclick="makeGuess()">Guess</button>
+<p id="message"></p>
+
+<script>
+  let secretWord = ["a", "b", "n", "o", "r", "m", "a", "l","--", "a", "m", "b","e","r"];
+  let guessedWord = ["_", "_", "_", "_", "_", "_", "_", "_","--", "_", "_", "_", "_", "_"];
+
+  document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+
+  function makeGuess() {
+    let guess = document.getElementById("guessInput").value.toLowerCase();
+    let correct = false;
+
+    for (let i = 0; i < secretWord.length; i++) {
+      if (secretWord[i] === guess) {
+        guessedWord[i] = guess;
+        correct = true;
+      }
+    }
+
+    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+    document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
+    document.getElementById("guessInput").value = "";
+  }
+</script>
