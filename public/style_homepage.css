@@ -2,13 +2,13 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: #fafafa;
+  background: #eadbff;
   color: #333;
 }
 
 header {
   background-color: linear-gradient(135deg, #7b2ff7, #f107a3);
-  color: white;
+  color: rgb(102, 29, 131);
   padding: 2em;
   text-align: center;
 }
@@ -37,7 +37,7 @@ ul {
 footer {
   text-align: center;
   padding: 1em;
-  background-color: #eee;
+  background-color: #d2c2ff;
   font-size: 0.9rem;
   margin-top: 20px;
 }
