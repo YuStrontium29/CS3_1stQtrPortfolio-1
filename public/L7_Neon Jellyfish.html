@@ -1,0 +1,169 @@
+Yes, I can. Here's the updated code with the jellyfish colored purple, teal, and light pink. I've also included the live site link for you to see it in action.
+
+Live Site and Code
+Here is the link to the live site on GitHub Pages: https://jem-n.github.io/jellyfish-dance/
+
+The updated code below assigns a different color to each jellyfish by creating new CSS variables and applying them to each jellyfish's filter and internal elements. The first jellyfish is purple, the second is teal, and the third is light pink.
+
+HTML
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      :root {
+        --purple: #8a2be2;
+        --teal: #008080;
+        --light-pink: #ffb6c1;
+        --speed-1: 20s;
+        --speed-2: 18s;
+        --speed-3: 22s;
+        --size: 120px;
+      }
+      body {
+        background: #050914;
+        margin: 0;
+        overflow: hidden;
+      }
+      .jellyfish {
+        position: absolute;
+        top: 50vh;
+        left: -30vw;
+        width: var(--size);
+        height: auto;
+      }
+      .jellyfish-1 {
+        top: 25vh;
+        animation: swim var(--speed-1) linear infinite;
+        filter: drop-shadow(0 0 4px var(--purple))
+          drop-shadow(0 0 12px var(--purple));
+      }
+      .jellyfish-2 {
+        top: 60vh;
+        animation: swim-reverse var(--speed-2) linear infinite;
+        filter: drop-shadow(0 0 4px var(--teal))
+          drop-shadow(0 0 12px var(--teal));
+      }
+      .jellyfish-3 {
+        top: 80vh;
+        animation: swim-path var(--speed-3) linear infinite;
+        filter: drop-shadow(0 0 4px var(--light-pink))
+          drop-shadow(0 0 12px var(--light-pink));
+      }
+      .bell {
+        width: var(--size);
+        height: calc(var(--size) * 0.7);
+        border-radius: 50% 50% 45% 45%;
+        opacity: 0.8;
+        animation: breathe 3s ease-in-out infinite;
+      }
+      .bell-1 {
+        background: var(--purple);
+      }
+      .bell-2 {
+        background: var(--teal);
+      }
+      .bell-3 {
+        background: var(--light-pink);
+      }
+      .tentacle {
+        width: 4px;
+        height: calc(var(--size) * 1.2);
+        margin: 2px;
+        display: inline-block;
+        animation: sway 3s ease-in-out infinite;
+      }
+      .tentacle-1 {
+        background: var(--purple);
+      }
+      .tentacle-2 {
+        background: var(--teal);
+      }
+      .tentacle-3 {
+        background: var(--light-pink);
+      }
+      @keyframes swim {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(120vw);
+        }
+      }
+      @keyframes swim-reverse {
+        0% {
+          transform: translateX(120vw);
+        }
+        100% {
+          transform: translateX(-30vw);
+        }
+      }
+      @keyframes swim-path {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(30vw, -10vh);
+        }
+        50% {
+          transform: translate(60vw, 10vh);
+        }
+        75% {
+          transform: translate(90vw, -10vh);
+        }
+        100% {
+          transform: translate(120vw, 0);
+        }
+      }
+      @keyframes breathe {
+        0%,
+        100% {
+          transform: scaleY(1);
+        }
+        50% {
+          transform: scaleY(1.05);
+        }
+      }
+      @keyframes sway {
+        0% {
+          transform: rotate(-5deg);
+        }
+        50% {
+          transform: rotate(5deg);
+        }
+        100% {
+          transform: rotate(-5deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jellyfish jellyfish-1">
+      <div class="bell bell-1"></div>
+      <div>
+        <span class="tentacle tentacle-1"></span>
+        <span class="tentacle tentacle-1"></span>
+        <span class="tentacle tentacle-1"></span>
+        <span class="tentacle tentacle-1"></span>
+      </div>
+    </div>
+    <div class="jellyfish jellyfish-2">
+      <div class="bell bell-2"></div>
+      <div>
+        <span class="tentacle tentacle-2"></span>
+        <span class="tentacle tentacle-2"></span>
+        <span class="tentacle tentacle-2"></span>
+        <span class="tentacle tentacle-2"></span>
+      </div>
+    </div>
+    <div class="jellyfish jellyfish-3">
+      <div class="bell bell-3"></div>
+      <div>
+        <span class="tentacle tentacle-3"></span>
+        <span class="tentacle tentacle-3"></span>
+        <span class="tentacle tentacle-3"></span>
+        <span class="tentacle tentacle-3"></span>
+      </div>
+    </div>
+  </body>
+</html>
